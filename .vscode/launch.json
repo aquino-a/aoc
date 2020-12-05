@@ -6,8 +6,19 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - Five",
+            "request": "launch",
+            "mainClass": "kr.aquino.aoc.Five.Five",
+            "projectName": "aoc_175c8ff9",
+            "args": [
+                "kr/aquino/aoc/Five/input.txt",
+                "2"
+            ]
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - FieldValidatorTest",
-            "request":"launch",
+            "request": "launch",
             "mainClass": "kr.aquino.aoc.Four.test.FieldValidatorTest",
             "projectName": "aoc_175c8ff9"
         },
