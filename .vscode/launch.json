@@ -1,0 +1,66 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - FieldValidatorTest",
+            "request":"launch",
+            "mainClass": "kr.aquino.aoc.Four.test.FieldValidatorTest",
+            "projectName": "aoc_175c8ff9"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Four",
+            "request": "launch",
+            "mainClass": "kr.aquino.aoc.Four.Four",
+            "projectName": "aoc_175c8ff9",
+            "args": [
+                "kr/aquino/aoc/Four/input.txt",
+                "2"
+            ]
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Three",
+            "request": "launch",
+            "mainClass": "kr.aquino.aoc.Three.Three",
+            "projectName": "aoc_175c8ff9",
+            "args": [
+                "kr/aquino/aoc/Three/input.txt",
+                "2"
+            ]
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch) - Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-One<aoc_175c8ff9>",
+            "request": "launch",
+            "mainClass": "kr.aquino.aoc.One.One",
+            "projectName": "aoc_175c8ff9",
+            "args": [
+                "2020",
+                "kr/aquino/aoc/One/input.txt",
+                "2"
+            ]
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Two<aoc_175c8ff9>",
+            "request": "launch",
+            "mainClass": "kr.aquino.aoc.Two.Two",
+            "projectName": "aoc_175c8ff9",
+            "args": [
+                "kr/aquino/aoc/Two/input.txt",
+                "2"
+            ]
+        }
+    ]
+}
