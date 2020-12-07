@@ -1,15 +1,10 @@
 package kr.aquino.aoc.Seven;
 
 import java.io.IOException;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.function.BiFunction;
 import java.util.stream.Collectors;
 
-import javax.crypto.Mac;
 
 import kr.aquino.aoc.IOUtility;
 
@@ -23,16 +18,31 @@ public class Seven {
         System.out.println(String.format("Count: %d", count));
     }
 
-    private static long getBagCount(Map<String,Bag> bags, String color){
-        var colorBags = getBags(bags, color);
+    private static long getBagCount(Map<String, Bag> bags, String color) {
+        var reverseMap = new HashMap<String, Set<String>>();
+        bags.values().forEach(b -> {
+            b.possibleBags.values().forEach(pb -> {
+                if(reverseMap.containsKey(pb.color)){
+                    reverseMap.get(pb.color).add(b.color);
+                } else {
+                    var set = new HashSet<String>();
+                    set.add(b.color);
+                    reverseMap.put(pb.color, set);
+                }
+            });
+        });
+
+        var colorBags = getBagsReverse(reverseMap, color);
         return colorBags.size();
     }
 
-    private static Set<Bag> getBags(Map<String,Bag> bags, String color) {
-        var colorBags = bags.values().stream().filter(b -> b.possibleBags.containsKey(color)).collect(Collectors.toSet());
-        var newBags = colorBags.stream().flatMap(cb -> getBags(bags, cb.color).stream()).collect(Collectors.toSet());
-        colorBags.addAll(newBags);
-        return colorBags;
+    private static Set<String> getBagsReverse(Map<String, Set<String>> reverseMap, String color){
+        var colors = reverseMap.get(color);
+        if(colors == null)
+            return Collections.emptySet();
+        var newColors = colors.stream().flatMap(c -> getBagsReverse(reverseMap, c).stream()).collect(Collectors.toSet());
+        colors.addAll(newColors);
+        return colors;
     }
 
 	private static long getRequiredBags(Map<String,Bag> bags, String color) {
