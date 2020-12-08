@@ -1,6 +1,7 @@
 package kr.aquino.aoc.Eight;
 
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.Stack;
@@ -22,69 +23,56 @@ public class Eight {
     }
 
     private static int accumulateWrap(Instruction[] intrs){
-        return accumulate(new HashSet<Integer>(), intrs, 0, 0);
-    }
-
-    private static int accumulate(Set<Integer> history, Instruction[] intrs, int position, int accumulator) {
-        if(history.contains(position))
-            return accumulator;
-        else history.add(position);
-
-        switch (intrs[position].getType()) {
-            case acc: accumulator += intrs[position].num;
-                return accumulate(history, intrs, position + 1, accumulator);
-            case jmp:
-                return accumulate(history, intrs, position + intrs[position].num, accumulator);
-            case nop:
-                return accumulate(history, intrs, position + 1, accumulator);
-            default:
-                throw new IllegalArgumentException();
+        try {
+            return accumulate(intrs);
+        } catch (InfiniteLoopException e) {
+            return e.accumulator;
         }
     }
 
     private static int accumulateTerminateWrap(Instruction[] intrs){
-        var history = new HashSet<Integer>();
         var stack = new Stack<Integer>();
+        for (int i = 0; i < intrs.length; i++) {
+            if(intrs[i].getType().equals(InstructionType.jmp) || intrs[i].getType().equals(InstructionType.nop))
+                stack.push(i);
+        }
         var lastChanged = -1;
-
-        try {
-            return accumulateTerminate(history, stack, lastChanged, intrs, 0, 0, true);
-        } catch (IllegalArgumentException e) {
-            while(true){
-                try {
-                    return accumulateTerminate(history, stack, lastChanged, intrs, 0, 0, false);
-                } catch (IllegalArgumentException ex) {
-                    if(lastChanged != -1)
-                        intrs[lastChanged].flip();
-                    lastChanged = stack.pop();
+        while(true){
+            try {
+                return accumulate(intrs);
+            } catch (InfiniteLoopException e) {
+                if(lastChanged != -1)
                     intrs[lastChanged].flip();
-                    history.clear();
-                }
+                lastChanged = stack.pop();
+                intrs[lastChanged].flip();
             }
         }
     }
 
-    private static int accumulateTerminate(Set<Integer> history, Stack<Integer> order, int lastChanged, Instruction[] intrs, int position, int accumulator, boolean stack) {
-        if(history.contains(position)){
-           throw new IllegalArgumentException("infinite loop");
-        }
-        else if(position >= intrs.length)
-            return accumulator;
-        else {
-            history.add(position);
-            if(stack && (intrs[position].getType().equals(InstructionType.jmp) || intrs[position].getType().equals(InstructionType.nop)))
-                order.push(position);
-        }
+    private static int accumulate(Instruction[] intrs) {
+        var history = new HashSet<Integer>();
+        var accumulator = 0;
 
-        switch (intrs[position].getType()) {
-            case acc: accumulator += intrs[position].num;
-                return accumulateTerminate(history, order, lastChanged, intrs, position + 1, accumulator, stack);
-            case jmp:
-                return accumulateTerminate(history, order, lastChanged, intrs, position + intrs[position].num, accumulator, stack);
-            case nop:
-                return accumulateTerminate(history, order, lastChanged, intrs, position + 1, accumulator, stack);
-            default:
-                throw new IllegalArgumentException();
+        for (int position = 0; position < intrs.length;) {
+            if(history.contains(position))
+                throw new InfiniteLoopException(accumulator);
+            else history.add(position);
+
+            switch (intrs[position].getType()) {
+                case acc: 
+                    accumulator += intrs[position].num;
+                    position++;
+                    continue;
+                case jmp:
+                    position += intrs[position].num;
+                    continue;
+                case nop:
+                    position++;
+                    continue;
+                default:
+                    throw new IllegalArgumentException();
+            }
         }
+        return accumulator;
     }
 }
