@@ -1,9 +1,9 @@
-package kr.aquino.aoc.Four.test;
+package kr.aquino.aoc.mmxx.Four.test;
 
 import org.junit.Assert;
 import org.junit.Test;
 
-import kr.aquino.aoc.Four.FieldValidator;
+import kr.aquino.aoc.mmxx.Four.FieldValidator;
 
 public class FieldValidatorTest {
 

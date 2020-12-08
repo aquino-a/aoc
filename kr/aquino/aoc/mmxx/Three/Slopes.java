@@ -1,4 +1,4 @@
-package kr.aquino.aoc.Three;
+package kr.aquino.aoc.mmxx.Three;
 
 import java.util.List;
 

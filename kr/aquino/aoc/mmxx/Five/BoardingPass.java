@@ -1,4 +1,4 @@
-package kr.aquino.aoc.Five;
+package kr.aquino.aoc.mmxx.Five;
 
 import java.util.Set;
 

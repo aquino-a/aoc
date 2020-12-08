@@ -1,4 +1,4 @@
-package kr.aquino.aoc.Four;
+package kr.aquino.aoc.mmxx.Four;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -6,13 +6,14 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import kr.aquino.aoc.IOUtility;
+import kr.aquino.aoc.mmxx.IOUtility;
+import kr.aquino.aoc.mmxx.Arguments;
 
 public class Four {
 
     public static void main(String[] args) throws IOException {
-        var arguments = new kr.aquino.aoc.Arguments(args, 2);
-        var path = arguments.SetText(0, "kr/aquino/aoc/Four/input.txt");
+        var arguments = new Arguments(args, 2);
+        var path = arguments.SetText(0, "kr/aquino/aoc/mmxx/Four/input.txt");
         var type = arguments.SetText(1, "1").equals("1")
                 ? new FieldValidator[] {
                      new FieldValidator("byr", null),

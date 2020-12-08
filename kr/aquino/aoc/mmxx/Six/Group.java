@@ -1,4 +1,4 @@
-package kr.aquino.aoc.Six;
+package kr.aquino.aoc.mmxx.Six;
 
 import java.util.ArrayList;
 import java.util.HashSet;

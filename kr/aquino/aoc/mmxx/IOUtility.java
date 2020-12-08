@@ -1,4 +1,4 @@
-package kr.aquino.aoc;
+package kr.aquino.aoc.mmxx;
 
 import java.io.BufferedReader;
 import java.io.IOException;

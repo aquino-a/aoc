@@ -1,16 +1,17 @@
-package kr.aquino.aoc.Six;
+package kr.aquino.aoc.mmxx.Six;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.ToLongFunction;
 
-import kr.aquino.aoc.IOUtility;
+import kr.aquino.aoc.mmxx.IOUtility;
+import kr.aquino.aoc.mmxx.Arguments;
 
 public class Six {
     public static void main(String[] args) throws IOException {
-        var arguments = new kr.aquino.aoc.Arguments(args, 2);
-        var path = arguments.SetText(0, "kr/aquino/aoc/Six/input.txt");
+        var arguments = new Arguments(args, 2);
+        var path = arguments.SetText(0, "kr/aquino/aoc/mmxx/Six/input.txt");
         ToLongFunction<Group> type = arguments.SetText(1, "1").equals("1") ? Group::uniqueQuestionCount : Group::everyoneYesCount;
 
         var groups = ParseGroups(IOUtility.ReadFile(path));

@@ -1,4 +1,4 @@
-package kr.aquino.aoc.Four;
+package kr.aquino.aoc.mmxx.Four;
 
 import java.util.Map;
 

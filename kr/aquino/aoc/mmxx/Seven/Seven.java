@@ -1,4 +1,4 @@
-package kr.aquino.aoc.Seven;
+package kr.aquino.aoc.mmxx.Seven;
 
 import java.io.IOException;
 import java.util.*;
@@ -6,12 +6,13 @@ import java.util.function.BiFunction;
 import java.util.stream.Collectors;
 
 
-import kr.aquino.aoc.IOUtility;
+import kr.aquino.aoc.mmxx.IOUtility;
+import kr.aquino.aoc.mmxx.Arguments;
 
 public class Seven {
     public static void main(String[] args) throws IOException {
-        var arguments = new kr.aquino.aoc.Arguments(args, 2);
-        var path = arguments.SetText(0, "kr/aquino/aoc/Seven/input.txt");
+        var arguments = new Arguments(args, 2);
+        var path = arguments.SetText(0, "kr/aquino/aoc/mmxx/Seven/input.txt");
         BiFunction<Map<String,Bag>, String, Long> func = arguments.SetText(1, "1").equals("1") ? Seven::getBagCount : Seven::getRequiredBags;
 
         var count = func.apply(IOUtility.ReadFile(path).stream().map(s -> new Bag(s)).collect(Collectors.toMap(b -> b.color, b -> b)), "shiny gold");

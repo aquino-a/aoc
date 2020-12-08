@@ -1,12 +1,13 @@
-package kr.aquino.aoc.Three;
+package kr.aquino.aoc.mmxx.Three;
 
-import kr.aquino.aoc.IOUtility;
+import kr.aquino.aoc.mmxx.IOUtility;
+import kr.aquino.aoc.mmxx.Arguments;
 
 public class Three {
 
     public static void main(String[] args) {
-        var arguments = new kr.aquino.aoc.Arguments(args, 3);
-        var path = arguments.SetText(0, "kr/aquino/aoc/Three/input.txt");
+        var arguments = new Arguments(args, 3);
+        var path = arguments.SetText(0, "kr/aquino/aoc/mmxx/Three/input.txt");
         var valueType = arguments.SetText(1, "1");
         int[][] values;
         if(valueType.equals("1"))

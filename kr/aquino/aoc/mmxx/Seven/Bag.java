@@ -1,11 +1,8 @@
-package kr.aquino.aoc.Seven;
+package kr.aquino.aoc.mmxx.Seven;
 
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Map;
 import java.util.Objects;
-import java.util.Set;
-import java.util.regex.MatchResult;
 import java.util.regex.Pattern;
 
 public class Bag {

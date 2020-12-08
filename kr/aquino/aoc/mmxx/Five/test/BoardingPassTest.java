@@ -1,9 +1,9 @@
-package kr.aquino.aoc.Five.test;
+package kr.aquino.aoc.mmxx.Five.test;
 
 import org.junit.Assert;
 import org.junit.Test;
 
-import kr.aquino.aoc.Five.BoardingPass;
+import kr.aquino.aoc.mmxx.Five.BoardingPass;
 
 public class BoardingPassTest {
     

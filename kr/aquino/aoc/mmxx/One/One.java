@@ -1,4 +1,4 @@
-package kr.aquino.aoc.One;
+package kr.aquino.aoc.mmxx.One;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -7,7 +7,7 @@ import java.util.function.BiFunction;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-import kr.aquino.aoc.IOUtility;
+import kr.aquino.aoc.mmxx.IOUtility;
 
 public class One {
 

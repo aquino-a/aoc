@@ -1,8 +1,8 @@
-package kr.aquino.aoc.Seven.test;
+package kr.aquino.aoc.mmxx.Seven.test;
 
 import org.junit.Test;
 
-import kr.aquino.aoc.Seven.Bag;
+import kr.aquino.aoc.mmxx.Seven.Bag;
 
 public class BagTest {
 

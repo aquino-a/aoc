@@ -1,14 +1,14 @@
-package kr.aquino.aoc.Two;
+package kr.aquino.aoc.mmxx.Two;
 
 import java.util.function.Predicate;
 
-import kr.aquino.aoc.IOUtility;
+import kr.aquino.aoc.mmxx.IOUtility;
 
 public class Two {
 
 
     public static void main(String[] args){
-        String url = "kr/aquino/aoc/Two/input.txt";
+        String url = "kr/aquino/aoc/mmxx/Two/input.txt";
         if(args.length > 0)
             url = args[0];
         Predicate<PasswordPolicy> p = PasswordPolicy::IsValidOne;

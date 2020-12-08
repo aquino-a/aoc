@@ -1,4 +1,4 @@
-package kr.aquino.aoc.Two;
+package kr.aquino.aoc.mmxx.Two;
 
 import java.util.regex.Pattern;
 import java.util.stream.IntStream;
