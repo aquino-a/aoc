@@ -8,10 +8,10 @@
             "type": "java",
             "name": "CodeLens (Launch) - Seven",
             "request": "launch",
-            "mainClass": "kr.aquino.aoc.Seven.Seven",
-            "projectName": "aoc2020_31990ff6",
+            "mainClass": "kr.aquino.aoc.mmxx.Seven.Seven",
+            "projectName": "aoc_5ada1cfe",
             "args": [
-                "kr/aquino/aoc/Seven/input.txt",
+                "kr/aquino/aoc/mmxx/Seven/input.txt",
                 "2"
             ]
         },
@@ -19,10 +19,10 @@
             "type": "java",
             "name": "CodeLens (Launch) - Six",
             "request": "launch",
-            "mainClass": "kr.aquino.aoc.Six.Six",
-            "projectName": "aoc_175c8ff9",
+            "mainClass": "kr.aquino.aoc.mmxx.Six.Six",
+            "projectName": "aoc_5ada1cfe",
             "args": [
-                "kr/aquino/aoc/Six/input.txt",
+                "kr/aquino/aoc/mmxx/Six/input.txt",
                 "2"
             ]
         },
@@ -30,10 +30,10 @@
             "type": "java",
             "name": "CodeLens (Launch) - Five",
             "request": "launch",
-            "mainClass": "kr.aquino.aoc.Five.Five",
-            "projectName": "aoc_175c8ff9",
+            "mainClass": "kr.aquino.aoc.mmxx.Five.Five",
+            "projectName": "aoc_5ada1cfe",
             "args": [
-                "kr/aquino/aoc/Five/input.txt",
+                "kr/aquino/aoc/mmxx/Five/input.txt",
                 "2"
             ]
         },
@@ -41,17 +41,17 @@
             "type": "java",
             "name": "CodeLens (Launch) - FieldValidatorTest",
             "request": "launch",
-            "mainClass": "kr.aquino.aoc.Four.test.FieldValidatorTest",
-            "projectName": "aoc_175c8ff9"
+            "mainClass": "kr.aquino.aoc.mmxx.Four.test.FieldValidatorTest",
+            "projectName": "aoc_5ada1cfe"
         },
         {
             "type": "java",
             "name": "CodeLens (Launch) - Four",
             "request": "launch",
-            "mainClass": "kr.aquino.aoc.Four.Four",
-            "projectName": "aoc_175c8ff9",
+            "mainClass": "kr.aquino.aoc.mmxx.Four.Four",
+            "projectName": "aoc_5ada1cfe",
             "args": [
-                "kr/aquino/aoc/Four/input.txt",
+                "kr/aquino/aoc/mmxx/Four/input.txt",
                 "2"
             ]
         },
@@ -59,10 +59,10 @@
             "type": "java",
             "name": "CodeLens (Launch) - Three",
             "request": "launch",
-            "mainClass": "kr.aquino.aoc.Three.Three",
-            "projectName": "aoc_175c8ff9",
+            "mainClass": "kr.aquino.aoc.mmxx.Three.Three",
+            "projectName": "aoc_5ada1cfe",
             "args": [
-                "kr/aquino/aoc/Three/input.txt",
+                "kr/aquino/aoc/mmxx/Three/input.txt",
                 "2"
             ]
         },
@@ -74,24 +74,24 @@
         },
         {
             "type": "java",
-            "name": "Debug (Launch)-One<aoc_175c8ff9>",
+            "name": "Debug (Launch)-One<aoc_5ada1cfe>",
             "request": "launch",
-            "mainClass": "kr.aquino.aoc.One.One",
-            "projectName": "aoc_175c8ff9",
+            "mainClass": "kr.aquino.aoc.mmxx.One.One",
+            "projectName": "aoc_5ada1cfe",
             "args": [
                 "2020",
-                "kr/aquino/aoc/One/input.txt",
+                "kr/aquino/aoc/mmxx/One/input.txt",
                 "2"
             ]
         },
         {
             "type": "java",
-            "name": "Debug (Launch)-Two<aoc_175c8ff9>",
+            "name": "Debug (Launch)-Two<aoc_5ada1cfe>",
             "request": "launch",
-            "mainClass": "kr.aquino.aoc.Two.Two",
-            "projectName": "aoc_175c8ff9",
+            "mainClass": "kr.aquino.aoc.mmxx.Two.Two",
+            "projectName": "aoc_5ada1cfe",
             "args": [
-                "kr/aquino/aoc/Two/input.txt",
+                "kr/aquino/aoc/mmxx/Two/input.txt",
                 "2"
             ]
         }
