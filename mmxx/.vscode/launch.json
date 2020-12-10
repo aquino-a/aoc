@@ -6,6 +6,18 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - Nine",
+            "request": "launch",
+            "mainClass": "kr.aquino.aoc.Nine.Nine",
+            "projectName": "mmxx_d94fd711",
+            "args": [
+                "kr/aquino/aoc/Nine/input.txt",
+                "248131121",
+                "2"
+            ]
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - Eight",
             "request": "launch",
             "mainClass": "kr.aquino.aoc.Eight.Eight",
