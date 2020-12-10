@@ -6,6 +6,17 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - Ten",
+            "request": "launch",
+            "mainClass": "kr.aquino.aoc.Ten.Ten",
+            "projectName": "mmxx_d94fd711",
+            "args": [
+                "kr/aquino/aoc/Ten/input.txt",
+                "2"
+            ]
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - Nine",
             "request": "launch",
             "mainClass": "kr.aquino.aoc.Nine.Nine",
