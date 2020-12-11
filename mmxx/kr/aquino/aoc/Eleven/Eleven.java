@@ -70,17 +70,17 @@ public class Eleven {
                     var extendedL = l + (m * l);
                     
                     if(i + extendedK < 0 || i + extendedK >= chart.length)
-                    break;
+                        break;
                     else if(j + extendedL < 0 || j + extendedL >= chart[i].length)
-                    break;
+                        break;
                     else if(extendedK == 0 && extendedL == 0)
-                    break;
+                        break;
                     else if(chart[i + extendedK][j + extendedL] == OCCUPIED_SEAT){
                         occupied++;
                         break;
                     }
                     else if(chart[i + extendedK][j + extendedL] == EMPTY_SEAT)
-                    break;
+                        break;
                 }   
             }
         }
