@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - Eleven",
+            "request": "launch",
+            "mainClass": "kr.aquino.aoc.Eleven.Eleven",
+            "projectName": "mmxx_d94fd711"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - Ten",
             "request": "launch",
             "mainClass": "kr.aquino.aoc.Ten.Ten",
