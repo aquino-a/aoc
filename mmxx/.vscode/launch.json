@@ -6,6 +6,28 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - Thirteen",
+            "request": "launch",
+            "mainClass": "kr.aquino.aoc.Thirteen.Thirteen",
+            "projectName": "mmxx_d94fd711",
+            "args": [
+                "kr/aquino/aoc/Thirteen/input.txt",
+                "2"
+            ]
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Twelve",
+            "request": "launch",
+            "mainClass": "kr.aquino.aoc.Twelve.Twelve",
+            "projectName": "mmxx_d94fd711",
+            "args": [
+                "kr/aquino/aoc/Twelve/input.txt",
+                "2"
+            ]
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - Eleven",
             "request": "launch",
             "mainClass": "kr.aquino.aoc.Eleven.Eleven",
