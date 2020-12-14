@@ -19,6 +19,18 @@ public class Docking {
         }
     }
 
+    public void actionPartTwo(Instruction instruction){
+        switch (instruction.type) {
+            case mask:
+                bitmask = instruction.mask;
+                break;
+            case mem:
+                memory[instruction.address] = mask(instruction.value);
+            default:
+                break;
+        }
+    }
+
     private long mask(long value) {
         value |= bitmask.on;
         value &= bitmask.off;

@@ -37,7 +37,7 @@ public class Instruction {
     private Bitmask createMask(String maskString) {
         var on = 0l;
         var off = 0l;
-        var floater = 0l;
+        var floaterIndexes = new ArrayList<Integer>();
         var cs = maskString.toCharArray();
         for (int i = 0; i < cs.length; i++) {
             on <<= 1;
@@ -47,16 +47,14 @@ public class Instruction {
                 case '1':
                     on |= 1;
                     off |= 1;
-                    floater |= 1;
                     break;
                 case '0':
                     off |= 0;
                     break;
                 case 'X':
-                    floater |= 0;
+                    floaterIndexes.add(cs.length - i);
                     off |= 1;
                 default:
-                    
                     break;
             }
         }
