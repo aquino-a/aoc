@@ -5,7 +5,9 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
+import java.util.Map;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 import kr.aquino.aoc.Arguments;
 import kr.aquino.aoc.IOUtility;
@@ -21,22 +23,18 @@ public class Fifteen {
                             .mapToInt(Integer::parseInt)
                             .boxed()
                             .collect(Collectors.toCollection(LinkedList<Integer>::new));
-
-        list.add(0);
         var answer = findNth(target, list);
 
         System.out.println(String.format("Answer: %d", answer));
     }
 
     private static int findNth(int i, LinkedList<Integer> list) {
-        var seen = new HashMap<Integer, Integer>();
-        for (int j = 0; j < list.size() - 1; j++) {
-            seen.put(list.get(j), j);
-        }
+        var seen = IntStream.range(0, list.size())
+                            .boxed()
+                            .collect(Collectors.toMap(in -> list.get(in), in -> in));;
+        list.add(0);
         var limit = i - list.size();
-        var previousLast = 0;
-        var last = 0;
-        for (int j = 0; j < limit; j++) {
+        for (int j = 0, previousLast = 0, last = 0; j < limit; j++) {
             previousLast = last;
             last = play(list, seen);
             seen.put(previousLast, list.size() - 2);
@@ -44,7 +42,7 @@ public class Fifteen {
         return list.getLast();
     }
 
-    private static int play(LinkedList<Integer> list, HashMap<Integer, Integer> seen) {
+    private static int play(LinkedList<Integer> list, Map<Integer, Integer> seen) {
         if(seen.containsKey(list.getLast())){
             var lastIndex = seen.get(list.getLast());
             var count = (list.size() - 1) - lastIndex;
@@ -52,7 +50,6 @@ public class Fifteen {
         }
         else {
             list.addLast(0);
-
         }
         return list.getLast();
     }
