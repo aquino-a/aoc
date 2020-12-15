@@ -9,7 +9,11 @@
             "name": "CodeLens (Launch) - Fourteen",
             "request": "launch",
             "mainClass": "kr.aquino.aoc.Fourteen.Fourteen",
-            "projectName": "mmxx_d94fd711"
+            "projectName": "mmxx_d94fd711",
+            "args": [
+                "kr/aquino/aoc/Fourteen/input.txt",
+                "2"
+            ]
         },
         {
             "type": "java",

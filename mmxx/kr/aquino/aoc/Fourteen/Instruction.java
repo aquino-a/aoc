@@ -7,8 +7,8 @@ public class Instruction {
 
     public final Type type;
     public final Bitmask mask;
-    public final int address;
-    public final int value;
+    public final long address;
+    public final long value;
 
 //     mask = 1001X0X00110011X01X1000110100011000X
 // mem[5228] = 409649
@@ -52,13 +52,13 @@ public class Instruction {
                     off |= 0;
                     break;
                 case 'X':
-                    floaterIndexes.add(cs.length - i);
+                    floaterIndexes.add(cs.length - 1 - i);
                     off |= 1;
                 default:
                     break;
             }
         }
-        return new Bitmask(on, off);
+        return new Bitmask(on, off, floaterIndexes);
     }
 
     public enum Type {
