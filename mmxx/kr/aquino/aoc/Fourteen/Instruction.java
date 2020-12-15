@@ -10,8 +10,6 @@ public class Instruction {
     public final long address;
     public final long value;
 
-//     mask = 1001X0X00110011X01X1000110100011000X
-// mem[5228] = 409649
     private static final Pattern INSTRUCTION_PATTERN = Pattern.compile("^((?<mask>mask)|(?<mem>(mem)\\[(?<memNum>\\d++)\\])) = (?<content>\\w+)$");
 
     public Instruction(String text){
@@ -32,7 +30,6 @@ public class Instruction {
         }
 
     }
-//     mask = 1001X0X00110011X01X1000110100011000X
 
     private Bitmask createMask(String maskString) {
         var on = 0l;
