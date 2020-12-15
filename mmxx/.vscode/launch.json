@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - Fifteen",
+            "request": "launch",
+            "mainClass": "kr.aquino.aoc.Fifteen.Fifteen",
+            "projectName": "mmxx_d94fd711"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - Fourteen",
             "request": "launch",
             "mainClass": "kr.aquino.aoc.Fourteen.Fourteen",
