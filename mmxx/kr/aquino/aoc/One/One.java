@@ -7,10 +7,33 @@ import java.util.function.BiFunction;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
+import kr.aquino.aoc.Arguments;
 import kr.aquino.aoc.IOUtility;
 
 public class One {
 
+    public static void main(String[] args) throws IOException {
+        var arguments = new Arguments(args, 2);
+        var target = Integer.parseInt(arguments.SetText(0, "2020"));
+        var path = arguments.SetText(1, "input.txt");
+        BiFunction<Integer, IntStream, int[]> func = arguments.SetText(1, "1").equals("1") ?  One::FindAddNumbers : One::FindThreeAddNumbers;
+
+        try {
+            var pair = func.apply(target, GetStream(path));
+            var product = 1;
+            for (int i = 0; i < pair.length; i++) {
+                System.out.println(String.format("Number %d: %d", i + 1, pair[i]));
+                product *= pair[i];
+            }
+            System.out.println(String.format("Product: %d", product));
+            System.out.println();
+
+        } catch (Exception e) {
+            System.out.println("Not found.");
+            e.printStackTrace();
+        }
+    }
+   
     public static int[] FindAddNumbers(int target, IntStream stream) {
         var sortedNums = stream.sorted().toArray();
 
@@ -44,46 +67,7 @@ public class One {
         throw new IllegalArgumentException("Target not found.");
     }
 
-    
-
-
     public static IntStream GetStream(String url) throws MalformedURLException, IOException {
         return IOUtility.ReadFile(url).stream().mapToInt(s -> Integer.parseInt(s));
     }
-
-    public static void main(String[] args){
-        String url = "input.txt";
-        int target = 2020;
-        BiFunction<Integer, IntStream, int[]> func =  One::FindAddNumbers;
-        if(args.length > 0){
-            target = Integer.parseInt(args[0]);
-        }
-        if(args.length > 1)
-            url = args[1];
-
-        if(args.length > 2){
-            if(args[2].equals("2"))
-                func = One::FindThreeAddNumbers;
-        }
-
-
-        try {
-            var pair = func.apply(target, GetStream(url));
-            var product = 1;
-            for (int i = 0; i < pair.length; i++) {
-                System.out.println(String.format("Number %d: %d", i + 1, pair[i]));
-                product *= pair[i];
-            }
-            System.out.println(String.format("Product: %d", product));
-            System.out.println();
-
-        } catch (Exception e) {
-            System.out.println("Not found.");
-            e.printStackTrace();
-        }
-
-
-    }
-
-    
 }

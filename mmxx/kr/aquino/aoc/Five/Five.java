@@ -28,15 +28,11 @@ public class Five {
                         return -1;
                     };
 
-
         var seatId = func.apply(IOUtility.ReadFile(path).stream()
                 .map(s -> new BoardingPass(128, 8, s))
                 .map(bp -> bp.getSeatId()).sorted().toArray(Integer[]::new));
                     
 
         System.out.println(String.format("SeatId: %d", seatId));
-        
-        
-
     }
 }

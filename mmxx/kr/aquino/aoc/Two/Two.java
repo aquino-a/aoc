@@ -2,24 +2,20 @@ package kr.aquino.aoc.Two;
 
 import java.util.function.Predicate;
 
+import kr.aquino.aoc.Arguments;
 import kr.aquino.aoc.IOUtility;
 
 public class Two {
 
-
     public static void main(String[] args){
-        String url = "kr/aquino/aoc/Two/input.txt";
-        if(args.length > 0)
-            url = args[0];
-        Predicate<PasswordPolicy> p = PasswordPolicy::IsValidOne;
-        if(args.length > 1){
-            if(args[1].equals("2"))
-                p = PasswordPolicy::IsValidTwo;
-        }
 
+        var arguments = new Arguments(args, 2);
+        var path = arguments.SetText(0, "kr/aquino/aoc/Two/input.txt");
+        Predicate<PasswordPolicy> p = arguments.SetText(1, "1").equals("1") ? 
+            PasswordPolicy::IsValidOne : PasswordPolicy::IsValidTwo;
 
         try {
-            var all = IOUtility.ReadFile(url);
+            var all = IOUtility.ReadFile(path);
             var validCount = all.stream()
                                 .map(s -> new PasswordPolicy(s))
                                 .filter(p)
@@ -33,5 +29,4 @@ public class Two {
             e.printStackTrace();
         }
     }
-    
 }
