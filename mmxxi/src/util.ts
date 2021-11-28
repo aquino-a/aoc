@@ -7,7 +7,7 @@ export const readInput = async (path: string): Promise<string[]> => {
 
     return new Promise((resolve, reject) => {
         const rs = createReadStream(path);
-        rs.on('error', error => reject(error));
+        rs.on('error', reject);
 
         createInterface({
             input: rs,
