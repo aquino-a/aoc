@@ -1,6 +1,5 @@
 import { createReadStream } from "fs";
 import { createInterface } from "readline";
-import { RSA_PKCS1_OAEP_PADDING } from "constants";
 
 export const readInput = async (path: string): Promise<string[]> => {
     const lines: string[] = [];
