@@ -1,4 +1,4 @@
-import { setupTest } from "../test";
+import { setupTest } from "../setup";
 import { readInput } from "../../util";
 
 test("setup test", async () => {

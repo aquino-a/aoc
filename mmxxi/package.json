@@ -34,5 +34,12 @@
     "code"
   ],
   "author": "Alex Aquino",
-  "license": "ISC"
+  "license": "ISC",
+  "jest": {
+    "verbose": true,
+    "testMatch": [
+       "**/test/**/*.[t]s?(x)",
+      "**/?(*.)+(spec|test).[t]s?(x)" 
+      ]
+  }
 }
