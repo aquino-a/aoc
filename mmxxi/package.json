@@ -1,45 +1,46 @@
 {
-  "name": "aoc-2021",
-  "version": "1.0.0",
-  "description": "Advent of Code 2021",
-  "main": "index.js",
-  "dependencies": {},
-  "devDependencies": {
-    "@babel/core": "^7.16.0",
-    "@babel/preset-env": "^7.16.4",
-    "@babel/preset-typescript": "^7.16.0",
-    "@types/jest": "^27.0.3",
-    "@types/node": "^16.11.10",
-    "@typescript-eslint/eslint-plugin": "^5.4.0",
-    "@typescript-eslint/parser": "^5.4.0",
-    "babel-jest": "^27.3.1",
-    "eslint": "^8.3.0",
-    "jest": "^27.3.1",
-    "prettier": "^2.5.0",
-    "typescript": "^4.5.2"
-  },
-  "scripts": {
-    "build": "tsc --build",
-    "clean": "tsc --build --clean",
-    "test": "jest"
-  },
-  "repository": {
-    "type": "git",
-    "url": "github.com/aquino-a/aoc.git"
-  },
-  "keywords": [
-    "aoc",
-    "Advent",
-    "of",
-    "code"
-  ],
-  "author": "Alex Aquino",
-  "license": "ISC",
-  "jest": {
-    "verbose": true,
-    "testMatch": [
-       "**/test/**/*.[t]s?(x)",
-      "**/?(*.)+(spec|test).[t]s?(x)" 
-      ]
-  }
+    "name": "aoc-2021",
+    "version": "1.0.0",
+    "description": "Advent of Code 2021",
+    "main": "index.js",
+    "dependencies": {},
+    "devDependencies": {
+        "@babel/core": "^7.16.0",
+        "@babel/preset-env": "^7.16.4",
+        "@babel/preset-typescript": "^7.16.0",
+        "@types/jest": "^27.0.3",
+        "@types/node": "^16.11.10",
+        "@typescript-eslint/eslint-plugin": "^5.4.0",
+        "@typescript-eslint/parser": "^5.4.0",
+        "babel-jest": "^27.3.1",
+        "eslint": "^8.3.0",
+        "eslint-config-prettier": "^8.3.0",
+        "jest": "^27.3.1",
+        "prettier": "^2.5.0",
+        "typescript": "^4.5.2"
+    },
+    "scripts": {
+        "build": "tsc --build",
+        "clean": "tsc --build --clean",
+        "test": "jest"
+    },
+    "repository": {
+        "type": "git",
+        "url": "github.com/aquino-a/aoc.git"
+    },
+    "keywords": [
+        "aoc",
+        "Advent",
+        "of",
+        "code"
+    ],
+    "author": "Alex Aquino",
+    "license": "ISC",
+    "jest": {
+        "verbose": true,
+        "testMatch": [
+            "**/test/**/*.[t]s?(x)",
+            "**/?(*.)+(spec|test).[t]s?(x)"
+        ]
+    }
 }

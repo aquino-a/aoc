@@ -1,1 +1,1 @@
-export const setupTest = () => "test";
+export const setupTest = () => 'test';

@@ -1,5 +1,5 @@
-import { createReadStream } from "fs";
-import { createInterface } from "readline";
+import { createReadStream } from 'fs';
+import { createInterface } from 'readline';
 
 export const readInput = async (path: string): Promise<string[]> => {
     const lines: string[] = [];
@@ -10,11 +10,13 @@ export const readInput = async (path: string): Promise<string[]> => {
 
         createInterface({
             input: rs,
-            terminal: false
-        }).on('line', (line: string) => {
-            lines.push(line);
-        }).on('close', () => {
-            resolve(lines);
-        });
-    })
+            terminal: false,
+        })
+            .on('line', (line: string) => {
+                lines.push(line);
+            })
+            .on('close', () => {
+                resolve(lines);
+            });
+    });
 };
