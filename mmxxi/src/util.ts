@@ -24,7 +24,7 @@ export const readInput = async (path: string): Promise<string[]> => {
 };
 
 export const getInputPath = (): string => {
-    const args: ParsedArgs = require('minimist')(process.argv.slice(2));
+    const args: ParsedArgs = require('minimist')(process.argv.slice(2)); // eslint-disable-line
     if (isNullOrUndefined(args['i'])) {
         return './input.txt';
     } else return args['i'];
