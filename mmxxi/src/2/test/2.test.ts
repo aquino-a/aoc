@@ -1,4 +1,4 @@
-import { getInputPath, readInput } from '../../util';
+import { readInput } from '../../util';
 import { partone, parseCommands, parttwo } from '../2';
 
 test('part 1 test input', async () => {

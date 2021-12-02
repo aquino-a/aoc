@@ -2,23 +2,23 @@ export const partone = (commands: Command[]): number => {
     const finalPosition = commands.reduce(
         (prev, current) => {
             switch (current.direction) {
-                case Direction.forward:
-                    return {
-                        horizontal: prev.horizontal + current.amount,
-                        depth: prev.depth,
-                    };
-                case Direction.down:
-                    return {
-                        horizontal: prev.horizontal,
-                        depth: prev.depth + current.amount,
-                    };
-                case Direction.up:
-                    return {
-                        horizontal: prev.horizontal,
-                        depth: prev.depth - current.amount,
-                    };
-                default:
-                    throw new Error(`invalid argument: ${current}`);
+            case Direction.forward:
+                return {
+                    horizontal: prev.horizontal + current.amount,
+                    depth: prev.depth,
+                };
+            case Direction.down:
+                return {
+                    horizontal: prev.horizontal,
+                    depth: prev.depth + current.amount,
+                };
+            case Direction.up:
+                return {
+                    horizontal: prev.horizontal,
+                    depth: prev.depth - current.amount,
+                };
+            default:
+                throw new Error(`invalid argument: ${current}`);
             }
         },
         { horizontal: 0, depth: 0 }
@@ -31,26 +31,26 @@ export const parttwo = (commands: Command[]): number => {
     const finalPosition = commands.reduce(
         (prev, current) => {
             switch (current.direction) {
-                case Direction.forward:
-                    return {
-                        horizontal: prev.horizontal + current.amount,
-                        depth: prev.depth + current.amount * prev.aim,
-                        aim: prev.aim,
-                    };
-                case Direction.down:
-                    return {
-                        horizontal: prev.horizontal,
-                        depth: prev.depth,
-                        aim: prev.aim + current.amount,
-                    };
-                case Direction.up:
-                    return {
-                        horizontal: prev.horizontal,
-                        depth: prev.depth,
-                        aim: prev.aim - current.amount,
-                    };
-                default:
-                    throw new Error(`invalid argument: ${current}`);
+            case Direction.forward:
+                return {
+                    horizontal: prev.horizontal + current.amount,
+                    depth: prev.depth + current.amount * prev.aim,
+                    aim: prev.aim,
+                };
+            case Direction.down:
+                return {
+                    horizontal: prev.horizontal,
+                    depth: prev.depth,
+                    aim: prev.aim + current.amount,
+                };
+            case Direction.up:
+                return {
+                    horizontal: prev.horizontal,
+                    depth: prev.depth,
+                    aim: prev.aim - current.amount,
+                };
+            default:
+                throw new Error(`invalid argument: ${current}`);
             }
         },
         { horizontal: 0, depth: 0, aim: 0 }
