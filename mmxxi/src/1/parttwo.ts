@@ -10,8 +10,8 @@ readInput(getInputPath()).then(input => {
 });
 
 export const getDepthChanges = (depths: number[]): change[] => {
-    const changes = [change.na];
-    let prev = Number.MAX_SAFE_INTEGER;
+    const changes = [];
+    let prev: number;
 
     for (let i = 2; i < depths.length; i++) {
         let sum = depths[i - 2];
