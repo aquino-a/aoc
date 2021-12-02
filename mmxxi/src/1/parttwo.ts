@@ -1,15 +1,15 @@
 import { getInputPath, readInput } from '../util';
-import { change } from './partone';
+import { Change } from './partone';
 
 readInput(getInputPath()).then(input => {
     const depths = input.map(s => parseInt(s));
     const increaseCount = getDepthChanges(depths).filter(
-        d => d == change.increased
+        d => d == Change.increased
     ).length;
     console.log(increaseCount);
 });
 
-export const getDepthChanges = (depths: number[]): change[] => {
+export const getDepthChanges = (depths: number[]): Change[] => {
     const changes = [];
     let prev: number;
 
@@ -19,10 +19,10 @@ export const getDepthChanges = (depths: number[]): change[] => {
         sum += depths[i];
 
         if (sum > prev) {
-            changes.push(change.increased);
+            changes.push(Change.increased);
         } else if (sum < prev) {
-            changes.push(change.decreased);
-        } else changes.push(change.na);
+            changes.push(Change.decreased);
+        } else changes.push(Change.na);
 
         prev = sum;
     }
