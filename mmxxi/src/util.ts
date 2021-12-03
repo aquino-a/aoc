@@ -29,3 +29,8 @@ export const getInputPath = (): string => {
         return './input.txt';
     } else return args['i'];
 };
+
+export const getFlipMask = (size: number): number => {
+    const str = new Array(size).fill(1).reduce((p, c) => p + c, '');
+    return parseInt(str, 2);
+};
