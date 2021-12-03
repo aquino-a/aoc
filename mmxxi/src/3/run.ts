@@ -1,5 +1,5 @@
 import { getInputPath, readInput } from '../util';
-import { partone, parttwo, high, low } from './3';
+import { partone, parttwo } from './3';
 
 readInput(getInputPath()).then(input => {
     const report = partone(input);
@@ -7,8 +7,6 @@ readInput(getInputPath()).then(input => {
 });
 
 readInput(getInputPath()).then(input => {
-    const highResult = parttwo(high, input, 0);
-    const lowResult = parttwo(low, input, 0);
-
-    console.log(highResult * lowResult);
+    const result = parttwo(input);
+    console.log(result);
 });

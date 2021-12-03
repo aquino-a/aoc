@@ -27,16 +27,49 @@ export const partone = (input: string[]): Report => {
     };
 };
 
-export const parttwo = (
-    compare: (separated: { 1: string[]; 0: string[] }, index: number) => number,
-    input: string[],
-    index: number
-): number => {
+export const parttwo = (input: string[]): number => {
+    const highResult = rateHigh(input, 0);
+    const lowResult = rateLow(input, 0);
+
+    return highResult * lowResult;
+};
+
+export const rateHigh = (input: string[], index: number): number => {
     if (input.length == 1) {
         return parseInt(input[0], 2);
     }
 
-    const separated = input.reduce(
+    const separated = separate(input, index);
+
+    if (
+        separated[1].length == separated[0].length ||
+        separated[1].length > separated[0].length
+    ) {
+        return rateHigh(separated[1], index + 1);
+    } else {
+        return rateHigh(separated[0], index + 1);
+    }
+};
+
+export const rateLow = (input: string[], index: number): number => {
+    if (input.length == 1) {
+        return parseInt(input[0], 2);
+    }
+
+    const separated = separate(input, index);
+
+    if (
+        separated[1].length == separated[0].length ||
+        separated[0].length < separated[1].length
+    ) {
+        return rateLow(separated[0], index + 1);
+    } else {
+        return rateLow(separated[1], index + 1);
+    }
+};
+
+const separate = (input: string[], index: number) => {
+    return input.reduce(
         (p: { 1: string[]; 0: string[] }, c) => {
             if (c.charAt(index) == '1') {
                 p[1].push(c);
@@ -46,36 +79,6 @@ export const parttwo = (
         },
         { 1: [], 0: [] }
     );
-
-    return compare(separated, index);
-};
-
-export const high = (
-    separated: { 1: string[]; 0: string[] },
-    index: number
-): number => {
-    if (
-        separated[1].length == separated[0].length ||
-        separated[1].length > separated[0].length
-    ) {
-        return parttwo(high, separated[1], index + 1);
-    } else {
-        return parttwo(high, separated[0], index + 1);
-    }
-};
-
-export const low = (
-    separated: { 1: string[]; 0: string[] },
-    index: number
-): number => {
-    if (
-        separated[1].length == separated[0].length ||
-        separated[0].length < separated[1].length
-    ) {
-        return parttwo(low, separated[0], index + 1);
-    } else {
-        return parttwo(low, separated[1], index + 1);
-    }
 };
 
 export interface Report {
