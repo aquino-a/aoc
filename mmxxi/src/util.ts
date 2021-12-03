@@ -31,6 +31,6 @@ export const getInputPath = (): string => {
 };
 
 export const getFlipMask = (size: number): number => {
-    const str = new Array(size).fill(1).reduce((p, c) => p + c, '');
+    const str = new Array(size).fill('1').join('');
     return parseInt(str, 2);
 };
