@@ -55,7 +55,7 @@ export class Diagram {
         const y = line.to.y - line.from.y;
 
         const divideBy = Math.abs(gcd(x, y));
-        const increment: Point = new Point(x / divideBy, y / divideBy);
+        const increment = new Point(x / divideBy, y / divideBy);
 
         const range = [line.from, line.to];
         for (
