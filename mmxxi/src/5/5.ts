@@ -37,7 +37,6 @@ export class Diagram {
     };
 
     drawLine = (line: Line) => {
-        //
         const range = this.getRange(line);
         range.forEach(p => {
             if (this.diagram[p.x] == undefined) {
