@@ -34,3 +34,11 @@ export const getFlipMask = (size: number): number => {
     const str = new Array(size).fill('1').join('');
     return parseInt(str, 2);
 };
+
+export const gcd = (a: number, b: number): number => {
+    if (b == 0) {
+        return a;
+    }
+
+    return gcd(b, a % b);
+};
