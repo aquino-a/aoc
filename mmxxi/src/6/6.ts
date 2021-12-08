@@ -10,7 +10,6 @@ export const parttwo = (input: string[]): number => {
 export const simulate = (fish: LanternFish[], days: number): number => {
     for (let i = 0; i < days; i++) {
         const restartFish = removeTime(fish, 0);
-        let newFish: LanternFish;
 
         fish.forEach(f => {
             f.time--;
@@ -26,10 +25,6 @@ export const simulate = (fish: LanternFish[], days: number): number => {
             } else {
                 six.count += restartFish.count;
             }
-        }
-
-        if (newFish != undefined) {
-            fish.push(newFish);
         }
     }
 
