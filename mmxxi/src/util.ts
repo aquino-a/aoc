@@ -42,3 +42,7 @@ export const gcd = (a: number, b: number): number => {
 
     return gcd(b, a % b);
 };
+
+export const triangleNum = (n: number): number => {
+    return (n * (n + 1)) / 2;
+};
